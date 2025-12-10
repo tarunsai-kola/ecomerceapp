@@ -1,6 +1,6 @@
-import {v2 as cloudinary} from "cloudinary";
+import { v2 as cloudinary } from "cloudinary";
 
-import dotenv from "./env.js";
+import { env } from "./env.js";
 
 
 cloudinary.config({

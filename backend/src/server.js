@@ -2,7 +2,7 @@ import express from "express";
 import path from "path";
 import { env } from "./config/env.js";
 import { connectDB } from "./config/db.js";
-import { clerkMiddleware, rootAuthLoader } from '@clerk/react-router/server'
+import { clerkMiddleware } from '@clerk/express';
 const app = express();
 
 const __dirname = path.resolve();
@@ -10,7 +10,7 @@ const __dirname = path.resolve();
 app.use(clerkMiddleware());
 
 app.get("/api/health", (req, res) => {
-     
+
     res.status(200).json({ message: "ok" });
 });
 
@@ -28,6 +28,9 @@ const server = app.listen(env.PORT, () => {
     connectDB();
 });
 
-server();
+
 
 export default server;
+git add .;
+ git commit -m "Fix backend: use @clerk/express, fix imports and server logic";
+  git push origin main
